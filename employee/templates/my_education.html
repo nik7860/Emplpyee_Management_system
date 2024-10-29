@@ -1,0 +1,99 @@
+{% extends "empnav.html" %}
+
+{% block main %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <a href="{% url 'edit_education'%}"><button class="btn bg-warning float-end" ><i class="fas fa-edit"></i></button></a>
+        <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">My Education</h5> 
+        <div class="container-fluid">
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Post Graduation</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Course Name</td>
+                        <td>{{ex.epg}}
+                    </tr>
+                    <tr>
+                        <td>Collage</td>
+                        <td>{{ex.colpg}}
+                    </tr>
+                    <tr>
+                        <td>Percentage</td>
+                        <td>{{ex.perpg}}
+                    </tr>
+                    <tr>
+                        <td>Year of Passing</td>
+                        <td>{{ex.ypg}}
+                    </tr>
+                </table>
+            </div>
+
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Graduation</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Course Name</td>
+                        <td>{{ex.eg}}
+                    </tr>
+                    <tr>
+                        <td>Collage</td>
+                        <td>{{ex.colg}}
+                    </tr>
+                    <tr>
+                        <td>Percentage</td>
+                        <td>{{ex.perg}}
+                    </tr>
+                    <tr>
+                        <td>Year of Passing</td>
+                        <td>{{ex.yg}}
+                    </tr>
+                </table>
+            </div>
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Senior Secondry Education</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Board</td>
+                        <td>{{ex.ess}}
+                    </tr>
+                    <tr>
+                        <td>Collage</td>
+                        <td>{{ex.colss}}
+                    </tr>
+                    <tr>
+                        <td>Percentage</td>
+                        <td>{{ex.perss}}
+                    </tr>
+                    <tr>
+                        <td>Year of Passing</td>
+                        <td>{{ex.yss}}
+                    </tr>
+                </table>
+            </div>
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Higher Education</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Board</td>
+                        <td>{{ex.eh}}
+                    </tr>
+                    <tr>
+                        <td>Collage</td>
+                        <td>{{ex.colh}}
+                    </tr>
+                    <tr>
+                        <td>Percentage</td>
+                        <td>{{ex.perh}}
+                    </tr>
+                    <tr>
+                        <td>Year of Passing</td>
+                        <td>{{ex.yh}}
+                    </tr>
+                </table>
+            </div>
+        </div> 
+    </div>
+</div>
+{% endblock %}

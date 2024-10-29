@@ -1,0 +1,98 @@
+{% extends "empnav.html" %}
+
+{% block main %}
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">My Profile</h5> 
+        <div class="container-fluid">
+            <form method="POST" name="profile_update">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Firstname</label>
+                            <input type="text" pattern="[A-Za-z]+" class="form-control" name="fname" placeholder="Enter First name" value={{user.first_name}}>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Lastname</label>
+                            <input type="text" pattern="[A-Za-z]+" class="form-control" name="lname" placeholder="Enter Last name" value={{user.last_name}}>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Employee Code</label>
+                            <input type="number" pattern="[0-9]+" class="form-control" name="ecode" placeholder="Enter Employee code" value={{employee.empcode}}>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email"  class="form-control" name="email" placeholder="Enter contact" value={{user.username}} readonly >
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text"  class="form-control" name="department" placeholder="Enter Department" value={{employee.dept}}>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Designation</label>
+                            <input type="text"  class="form-control" name="designation" placeholder="Enter Designation" value={{employee.designation}}>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <input type="text"  class="form-control" name="contact" placeholder="Enter contact" value={{employee.contact}} >
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Joining date [{{employee.joingdate}}]</label>
+                            <input type="date"  class="form-control" name="jdate"  placeholder="Enter joining date">
+                        </div>
+                    </div>
+                    
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select name="gender" class="form-control">
+                                
+                                <option value="None">{{employee.gender}}</option>
+                                
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input class="m-2 px-2 btn btn-primary"  type="submit"  value="Submit">
+            </form>
+        </div> 
+    </div>
+</div>
+{% if error == "no" %}
+<script>
+    alert("Profile Updated Successfully")
+    window.location = ('{% url 'profile' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert("something wrong ! Try again ....")
+    
+</script>
+{% endif %}
+
+
+{% endblock %}

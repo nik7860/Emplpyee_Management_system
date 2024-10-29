@@ -1,0 +1,22 @@
+.nav-link{
+    color: aliceblue !important;
+}
+
+.nav-item :hover{
+    color: yellow !important;
+    background-color: red;
+    border-radius: 30px;
+}
+
+
+
+.list-group-item {
+    padding: 8px !important;
+}
+
+.active_index{
+    background-color: orange;
+    border-radius: 30px;
+}
+
+

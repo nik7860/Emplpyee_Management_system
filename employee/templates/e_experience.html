@@ -1,0 +1,96 @@
+{% extends "empnav.html" %}
+
+{% block main %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <a href="{% url 'my_experience'%}"><button class="btn bg-warning float-end" ><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
+        <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">My Experience</h5> 
+        <div class="container-fluid">
+            <form method="POST" name="edit_experience">
+                {% csrf_token %}
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">First Company</h5>
+                
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Company Name</td>
+                            <td><input value="{{ex.company1}}" name="c1n">
+                        </tr>
+                        <tr>
+                            <td>Designation</td>
+                            <td><input value="{{ex.company1_des}}" name="c1d">
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td><input value="{{ex.company1dur}}" name="c1dur">
+                        </tr>
+                        <tr>
+                            <td>Salary</td>
+                            <td><input value="{{ex.company1_salary}}" name="c1s">
+                        </tr>
+                    </table>
+            
+                </div>
+
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Second Company</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Company Name</td>
+                            <td><input value="{{ex.company2}}" name="c2n">
+                        </tr>
+                        <tr>
+                            <td>Designation</td>
+                            <td><input value="{{ex.company2_des}}" name="c2d">
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td><input value="{{ex.company2dur}}" name="c2dur">
+                        </tr>
+                        <tr>
+                            <td>Salary</td>
+                            <td><input value="{{ex.company2_salary}}" name="c2s">
+                        </tr>
+                    </table>
+                </div>
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Third Company</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Company Name</td>
+                            <td><input value="{{ex.company3}}" name="c3n">
+                        </tr>
+                        <tr>
+                            <td>Designation</td>
+                            <td><input value="{{ex.company3_des}}" name="c3d">
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td><input value="{{ex.company3dur}}" name="c3dur">
+                        </tr>
+                        <tr>
+                            <td>Salary</td>
+                            <td><input value="{{ex.company3_salary}}" name="c3s">
+                        </tr>
+                    </table>
+                </div>
+                <input class="m-2 px-2 btn btn-primary"  type="submit"  value="Submit">
+            </form>
+        </div> 
+    </div>
+</div>
+{% if error == "no" %}
+<script>
+    alert("My Experience Updated Successfully")
+    window.location = ('{% url 'my_experience' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert("something wrong ! Try again ....")
+    
+</script>
+{% endif %}
+{% endblock %}

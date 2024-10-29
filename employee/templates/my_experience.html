@@ -1,0 +1,78 @@
+{% extends "empnav.html" %}
+
+{% block main %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <a href="{% url 'edit_experience'%}"><button class="btn bg-warning float-end" ><i class="fas fa-edit"></i></button></a>
+        <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">My Experience</h5> 
+        <div class="container-fluid">
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">First Company</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Company Name</td>
+                        <td>{{ex.company1}}
+                    </tr>
+                    <tr>
+                        <td>Designation</td>
+                        <td>{{ex.company1_des}}
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td>{{ex.company1dur}}
+                    </tr>
+                    <tr>
+                        <td>Salary</td>
+                        <td>{{ex.company1_salary}}
+                    </tr>
+                </table>
+            </div>
+
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Second Company</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Company Name</td>
+                        <td>{{ex.company2}}
+                    </tr>
+                    <tr>
+                        <td>Designation</td>
+                        <td>{{ex.company2_des}}
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td>{{ex.company2dur}}
+                    </tr>
+                    <tr>
+                        <td>Salary</td>
+                        <td>{{ex.company2_salary}}
+                    </tr>
+                </table>
+            </div>
+            <div class=container>
+                <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Third Company</h5>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Company Name</td>
+                        <td>{{ex.company3}}
+                    </tr>
+                    <tr>
+                        <td>Designation</td>
+                        <td>{{ex.company3_des}}
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td>{{ex.company3dur}}
+                    </tr>
+                    <tr>
+                        <td>Salary</td>
+                        <td>{{ex.company3_salary}}
+                    </tr>
+                </table>
+            </div>
+        </div> 
+    </div>
+</div>
+{% endblock %}

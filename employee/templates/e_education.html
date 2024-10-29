@@ -1,0 +1,117 @@
+{% extends "empnav.html" %}
+
+{% block main %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <a href="{% url 'my_education'%}"><button class="btn bg-warning float-end" ><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
+        <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">My Education</h5> 
+        <div class="container-fluid">
+            <form method="Post" name="edit_education">
+                {%csrf_token%}
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Post Graduation</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Course Name</td>
+                            <td><input value="{{ex.epg}}" name="e1n"><td>
+                        </tr>
+                        <tr>
+                            <td>Collage</td>
+                            <td><input value="{{ex.colpg}}" name="e1c"><td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td><input value="{{ex.perpg}}" name="e1p"><td>
+                        </tr>
+                        <tr>
+                            <td>Year of Passing</td>
+                            <td><input value="{{ex.ypg}}" name="e1y"><td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Graduation</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Course Name</td>
+                            <td><input value="{{ex.eg}}" name="e2n"><td>
+                        </tr>
+                        <tr>
+                            <td>Collage</td>
+                            <td><input value="{{ex.colg}}" name="e2c"><td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td><input value="{{ex.perg}}" name="e2p"><td>
+                        </tr>
+                        <tr>
+                            <td>Year of Passing</td>
+                            <td><input value="{{ex.yg}}" name="e2y"><td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Senior Secondry Education</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Board</td>
+                            <td><input value="{{ex.ess}}" name="e3n"><td>
+                        </tr>
+                        <tr>
+                            <td>Collage</td>
+                            <td><input value="{{ex.colss}}" name="e3c"><td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td><input value="{{ex.perss}}" name="e3p"><td>
+                        </tr>
+                        <tr>
+                            <td>Year of Passing</td>
+                            <td><input value="{{ex.yss}}" name="e3y"><td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=container>
+                    <h5 class="p-2 text-warning" style="border-bottom: 2px solid orange">Higher Education</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Board</td>
+                            <td><input value="{{ex.eh}}" name="e4n"><td>
+                        </tr>
+                        <tr>
+                            <td>Collage</td>
+                            <td><input value="{{ex.colh}}" name="e4c"><td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td><input value="{{ex.perh}}" name="e4p"><td>
+                        </tr>
+                        <tr>
+                            <td>Year of Passing</td>
+                            <td><input value="{{ex.yh}}" name="e4y"><td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <input class="m-2 px-2 btn btn-primary"  type="submit"  value="Submit">
+            </form>
+        </div> 
+    </div>
+
+</div>
+{% if error == "no" %}
+<script>
+    alert("My Eduaction Updated Successfully")
+    window.location = ('{% url 'my_education' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert("something wrong ! Try again ....")
+    
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "admin_nav.html" %}
+
+{% block main %}
+
+<h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">Admin Dashboard</h5>
+<div class="container-fluid">
+<div class="card shadow">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h5 class="text-center text-success">Welcome to Admin Dashboard</h5>
+            <h5 class="text-center">{{request.user.first_name}}{{request.user.last_name}}</h5>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
